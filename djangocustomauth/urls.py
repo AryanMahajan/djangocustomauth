@@ -16,7 +16,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib import auth
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    path("register/", _),
+    path("login/",_),
+    path("logout/",_),
+    
+    # Email Verification
+    # email-verify?token=xyz
+    
+    # Change Password
+    
+    # Update user info
+    
+    # Forgot Password
+    # forgot-password-form
+    # password-reset?token=xyz
+    
+    # 22 mark
+    
+    
+    
+    
 ]
