@@ -17,28 +17,45 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.contrib import auth
+from django.conf.urls import url
+from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
     
-    path("register/", _),
-    path("login/",_),
-    path("logout/",_),
+    
+    path(r"^login/", LoginView.as_view(), name="login"),
+    path(r"^logout/", LogoutView.as_view(), name="logout"),
+    
+    
+    # path(
+    #     "password_change/", views.PasswordChangeView.as_view(), name="password_change"
+    # ),
+    # path(
+    #     "password_change/done/",
+    #     views.PasswordChangeDoneView.as_view(),
+    #     name="password_change_done",
+    # ),
+    # path("password_reset/", views.PasswordResetView.as_view(), name="password_reset"),
+    # path(
+    #     "password_reset/done/",
+    #     views.PasswordResetDoneView.as_view(),
+    #     name="password_reset_done",
+    # ),
+    # path(
+    #     "reset/<uidb64>/<token>/",
+    #     views.PasswordResetConfirmView.as_view(),
+    #     name="password_reset_confirm",
+    # ),
+    # path(
+    #     "reset/done/",
+    #     views.PasswordResetCompleteView.as_view(),
+    #     name="password_reset_complete",
+    # ),
+    
     
     # Email Verification
     # email-verify?token=xyz
-    
-    # Change Password
-    
-    # Update user info
-    
-    # Forgot Password
-    # forgot-password-form
-    # password-reset?token=xyz
-    
-    # 22 mark
-    
-    
     
     
 ]
